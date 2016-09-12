@@ -1,0 +1,19 @@
+{
+  "name": "global-e-sports-stats",
+  "version": "1.0.0",
+  "description": "gaming stats for users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nazaboy19/GESS.git"
+  },
+  "author": "Ibrahim Mercado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nazaboy19/GESS/issues"
+  },
+  "homepage": "https://github.com/Nazaboy19/GESS#readme"
+}
