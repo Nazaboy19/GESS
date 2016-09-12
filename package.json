@@ -17,10 +17,3 @@
   },
   "homepage": "https://github.com/Nazaboy19/GESS#readme"
 },
-{
-  "dependencies": {
-    "express": "^4.14.0",
-    
-    
-  }
-},
