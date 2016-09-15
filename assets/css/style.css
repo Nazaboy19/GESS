@@ -1,7 +1,7 @@
 button {
 	border-radius: 8px;
     border: none;
-    color: white;
+    background-color: #22DFF6;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -9,4 +9,36 @@ button {
     font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+#gameinfo{
+	text-align: center;
+}
+
+#JumboText{
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+#LogoImg{
+	width: 100px;
+}
+
+#JumboTexter{
+	text-align: center;
+	background-color: #FFFFFF;
+	font-size: 25px;
+}
+
+#testimonials{
+	text-align: center;
+	font-size: 16px;
+}
+
+#NavC{
+	background-color: #F64949;
+}
+
+#NavC1{
+	background-color: #4E74E6;
 }
