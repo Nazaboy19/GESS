@@ -11,6 +11,9 @@ button {
     margin: 4px 2px;
     cursor: pointer;
 }
+#h1Contact{
+	text-align: center;
+}
 
 #gameinfo{
 	text-align: center;
@@ -42,10 +45,83 @@ button {
 }
 
 #NavC1{
-	color: #FFFFFF;;
+	color: #FFFFFF;
 }
 
 #login{
+	text-align: center;
+}
+
+#ContactImg{
+	text-align: center;
+}
+
+#faqbd{
+	background-color:#F64949;
+
+}
+
+#jumbotronfq{
+	background-color: #FFFFFF;
+}
+
+#h1Contact{
+	text-align: center;
+
+}
+
+#inputC1{
+	text-align: center;
+	margin: 0 auto;
+
+	width: ;
+}
+
+#JumboContact{
+	padding-bottom: 0%;
+	text-align: center;
+	background-color: #F64949;
+}
+
+#exampleInputEmail{
+	width: 75%;
+	text-align: center;
+	display: inline-block;
+	align-content: center;
+	
+}
+
+#exampleInputName1{
+	width: 75%;
+	text-align: center;
+	display: inline-block;
+	align-content: center;
+	
+}
+#inputBoxC{
+	width: 75%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    text-align: center;
+}
+#subBut{
+	margin:4%;
+	align-items: center;
+	width: 14%;
+	text-align: center;
+
+}
+
+#ContactSubm{
+	text-align: center;
+}
+
+#ContactBtn{
 	text-align: center;
 }
 
