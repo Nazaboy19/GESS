@@ -1,7 +1,8 @@
 button {
 	border-radius: 8px;
     border: none;
-    background-color: #22DFF6;
+    background-color: #F64949;
+    color: #111311;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -27,6 +28,7 @@ button {
 #JumboTexter{
 	text-align: center;
 	background-color: #FFFFFF;
+	color: #111311;
 	font-size: 25px;
 }
 
@@ -40,5 +42,13 @@ button {
 }
 
 #NavC1{
-	background-color: #4E74E6;
+	color: #FFFFFF;;
+}
+
+#login{
+	text-align: center;
+}
+
+footer{
+	text-align: center;
 }
