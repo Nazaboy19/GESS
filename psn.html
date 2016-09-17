@@ -5,6 +5,7 @@
   <title>Global E-Sports Stats</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="icon" type="image/png" sizes="16x16" href="letter-g-Fl.png">
   
     
   <!-- Bootstrap -->
@@ -30,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand visible-lg visible-md" href="/"><img id="LogoImg" src="assets/img/GESS2.png" alt="Gess" /></a>
+          <a class="navbar-brand visible-lg visible-md" href="main.html"><img id="LogoImg" src="assets/img/GESS2.png" alt="Gess" /></a>
      
         </div>
 
@@ -65,8 +66,11 @@
     <div class="jumbotron">
   
 <form action="GamerInfo.asp" id="GameInfo">
+        <p> Console</p>
 Console: <input type="text" name="Gaming Console" value=" "><br>
+        <p> Game</p>
 Game: <input type="text" name="Game" value=" "><br>
+        <p> Gamer Tag</p>
 Gamer Tag: <input type="text" name="Gamer Tag" value=" "><br>
 Game Rank: <input type="text" name="Game Rank" value=" "><br>
 Game Kills: <input type="text" name="Game Kills" value=" "><br>
@@ -76,7 +80,20 @@ In-Game Monies: <input type="text" name="In-Game Monies" value=" "><br>
 <input type="submit" value="Submit">
 </form>
 
+<script type="text/javascript">
 
+var GESSInf = new Firebase('https://gess.firebaseio.com/');
+var newInfoUp = GESSInf.push();
+    newInfoUp.set({ 'Console': 'Game', 'Gamer Tag': 'Game Rank', 'Game Kills':'Game Deaths', 'In-Game Monies' });
+// We've appended a new message to the message_list location.
+var path = newInfoUp.toString();
+// path will be something like
+
+var GESSInf = new Firebase('https://gess.firebaseio.com/');
+    GESSInf.push({ 'Console': 'Game', 'Gamer Tag': 'Game Rank', 'Game Kills':'Game Deaths', 'In-Game Monies' });
+
+
+</script>
   
 </div>
       
