@@ -1,4 +1,3 @@
-
   var config = {
     apiKey: "AIzaSyAy6LZ_TxVjauVHjNsJiMMwR2e4NK3mlU4",
     authDomain: "gess-501e9.firebaseapp.com",
