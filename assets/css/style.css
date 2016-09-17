@@ -125,6 +125,13 @@ button {
 	text-align: center;
 }
 
+#GameStatC{
+background-color:#FFFFFF;
+ 
+}
+
 footer{
 	text-align: center;
+	 
+   bottom:0;
 }
