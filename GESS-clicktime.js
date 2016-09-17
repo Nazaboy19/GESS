@@ -78,7 +78,7 @@ function toggleStar(postRef, uid) {
     if (post) {
       if (post.stars && post.stars[uid]) {
         post.starCount--;
-        post.stars[uid] = null;
+        post.stars[uid] = true;
       } else {
         post.starCount++;
         if (!post.stars) {
