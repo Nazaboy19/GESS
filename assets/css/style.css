@@ -17,6 +17,10 @@ button {
 
 #gameinfo{
 	text-align: center;
+	
+}
+#Inputen{
+	width: 250px;
 }
 
 #JumboText{
@@ -129,6 +133,7 @@ button {
 background-color:#FFFFFF;
 
 }
+
 #LoginSubmit{
 width:240px;
   height:35px;
@@ -154,6 +159,8 @@ width:240px;
   border-bottom-left-radius:5px;
   box-shadow: inset 0px 1px 0px #F64949, 0px 5px 0px 0px #F64949, 0px 10px 5px #999;
 }
+
+
 footer{
 	text-align: center;
 	 

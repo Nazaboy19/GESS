@@ -1,64 +1,106 @@
-/*
-*/
-// 1. Link to Firebase
-var GESSData = new Firebase("https://gess.firebaseio.com/"); 
 
+  var config = {
+    apiKey: "AIzaSyAy6LZ_TxVjauVHjNsJiMMwR2e4NK3mlU4",
+    authDomain: "gess-501e9.firebaseapp.com",
+    databaseURL: "https://gess-501e9.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "1090042223916"
+  };
+  firebase.initializeApp(config);
 
+var database = firebase.database();
+var usersDB = database.ref('user')
+console.log("loaded ");
+var that = this;
+var userId = null;
 
+function createUser(userInfo) {
+	usersDB.on('value', function(snapshot){
+		snapshot.forEach(function(data){
+			if (userInfo.username == data.val().username) {
+				if (userInfo.password == data.val().password) {
+					userId = data.key;
+					window.location = 'main.html';
+				} else {
+					alert('Wrong Password!')
+				}
+			} else {
+				database.ref('user').set(userInfo).then(function(){
+					userId = data.key
+					window.location = 'main.html';
+				});
+			}
+		});
+	});
+	// database.ref('user').set(userInfo).then(function(){
 
+	// });
+}
 
-$("#addGessInpit").on("click", function(){
+function writeUserData(console, game, gamerTag, gameRank,gameKills, gameDeaths,inGameMonie) {
+  database.ref('users/' + userId).set({
+    console: name,
+    game: game,
+    gamerTag : gamerTag,
+    gameRank : gameRank,
+    gameKills : gameKills,
+    gameDeaths : gameDeaths,
+    inGameMonie : inGameMonie
 
-	// Grabs user input
-	var GESS = $("#gessInput").val().trim();
-	var Game = $("#GameInput").val().trim();
-	var GamerTag = $("#gamerTagInput").val().trim();
-	var GamerRank = $("#gamerRankInput").val().trim();
-	var GameKills = $("#GameKillsInput").val().trim();
-	var GameDeaths = $("#GameDeathsnput").val().trim();
-	var InGameMonie = $("#InGameMonieInput").val().trim();
-	var Console = $("#ConsoleInput").val().trim();
-	
+  });
+}
 
+function writeNewPost(console, game, gamerTag, gameRank,gameKills, gameDeaths,inGameMonie) {
+  // A post entry.
+  var postData = {
+    console: console,
+    game: game,
+    gamerTag : gamerTag,
+    gameRank : gameRank,
+    gameKills : gameKills,
+    gameDeaths : gameDeaths,
+    inGameMonie : inGameMonie
+  };
 
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('posts').push().key;
 
-	// Creates local "temporary" object for  GESS Updates
-	var GESSclick = {
-		name:  GESS,
-		Game: Game,
-		GamerTag: GamerTag,
-		GameRank: GameRank,
-		GameKills: GameKills,
-		GameDeaths: GameDeaths,
-		InGameMonie: InGameMonie,
-		Console: Console,
-		
-	}
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/posts/' + newPostKey] = postData;
+  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
-	// Uploads train data to the database
-	GESSData.push(GESS);
+  return firebase.database().ref().update(updates);
+}
 
-	// Logs everything to console
-	console.log(GESS.name);
-	console.log(GESS.Game); 
-	console.log(console);
-	console.log(GESS.GamerTag)
+function toggleStar(postRef, uid) {
+  postRef.transaction(function(post) {
+    if (post) {
+      if (post.stars && post.stars[uid]) {
+        post.starCount--;
+        post.stars[uid] = null;
+      } else {
+        post.starCount++;
+        if (!post.stars) {
+          post.stars = {};
+        }
+        post.stars[uid] = true;
+      }
+    }
+    return post;
+  });
+}
 
-	// Alert
-	alert("GESS Post Successfully Updated!");
+//Event Click Listeners
 
-	// Clears all of the text-boxes
-	$("#GESSInput").val("");
-	$("#consoleInput").val("");
-	$("#GameInput").val("");
-	$("#GamerTagInput").val("");
-	$("#RankInput").val("");
-	$("#KillsInput").val("");
-	$("#DeathsInput").val("");
-	$("#InGameMonieInput").val("");
+$('#LoginSubmit').on('click', function(){
+	var username = $('#username').val();
+	var password = $('#password').val();
 
-	
-	
+	createUser({
+		username: username,
+		password: password
+	});
 });
 
 

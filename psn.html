@@ -11,8 +11,10 @@
   <!-- Bootstrap -->
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
-<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script src="GESS-clicktime.js"></script>
+
 
 
 
@@ -65,35 +67,26 @@
     
     <div class="jumbotron">
   
-<form action="GamerInfo.asp" id="GameInfo">
+<form action="GamerInfo.asp" id="GameInfo" >
+
         <p> Console</p>
-Console: <input type="text" name="Gaming Console" value=" "><br>
+ <input type="text" name="console" id="Inputen" value=" "><br>
         <p> Game</p>
-Game: <input type="text" name="Game" value=" "><br>
+ <input type="text" name="game"  id="Inputen" value=" "><br>
         <p> Gamer Tag</p>
-Gamer Tag: <input type="text" name="Gamer Tag" value=" "><br>
-Game Rank: <input type="text" name="Game Rank" value=" "><br>
-Game Kills: <input type="text" name="Game Kills" value=" "><br>
-Game Deaths: <input type="text" name="Game Deaths" value=" "><br>
-In-Game Monies: <input type="text" name="In-Game Monies" value=" "><br>
+ <input type="text" name="gamerTag" id="Inputen" value=" "><br>
+        <p>Game Rank</p>
+ <input type="text" name="gameRank" id="Inputen" value=" "><br>
+        <p>Game Kills</p>
+ <input type="text" name="gameKills" id="Inputen" value=" "><br>
+        <p>Game Deaths</p>
+ <input type="text" name="gameDeaths" id="Inputen" value=" "><br>
+        <p>In Game Money</p>
+ <input type="text" name="inGameMonie" id="Inputen" value=" "><br>
 
 <input type="submit" value="Submit">
 </form>
 
-<script type="text/javascript">
-
-var GESSInf = new Firebase('https://gess.firebaseio.com/');
-var newInfoUp = GESSInf.push();
-    newInfoUp.set({ 'Console': 'Game', 'Gamer Tag': 'Game Rank', 'Game Kills':'Game Deaths', 'In-Game Monies' });
-// We've appended a new message to the message_list location.
-var path = newInfoUp.toString();
-// path will be something like
-
-var GESSInf = new Firebase('https://gess.firebaseio.com/');
-    GESSInf.push({ 'Console': 'Game', 'Gamer Tag': 'Game Rank', 'Game Kills':'Game Deaths', 'In-Game Monies' });
-
-
-</script>
   
 </div>
       
