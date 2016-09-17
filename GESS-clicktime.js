@@ -49,7 +49,7 @@ function writeUserData(console, game, gamerTag, gameRank,gameKills, gameDeaths,i
 
   });
 }
-
+console.log(writeUserData)
 function writeNewPost(console, game, gamerTag, gameRank,gameKills, gameDeaths,inGameMonie) {
   // A post entry.
   var postData = {
